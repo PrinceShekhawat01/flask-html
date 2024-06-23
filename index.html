@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization Dashboard</title>
+</head>
+<body>
+    <h1>Data Visualization Dashboard</h1>
+    <form method="post">
+        <label for="dataset">Select Dataset:</label>
+        <select name="dataset" id="dataset">
+            <option value="Dataset 1">Dataset 1</option>
+            <option value="Dataset 2">Dataset 2</option>
+            <option value="Dataset 3">Dataset 3</option>
+        </select>
+        <br><br>
+        <label for="chart_type">Select Chart Type:</label>
+        <select name="chart_type" id="chart_type">
+            <option value="Bar Chart">Bar Chart</option>
+            <option value="Line Chart">Line Chart</option>
+            <option value="Pie Chart">Pie Chart</option>
+        </select>
+        <br><br>
+        <button type="submit">Plot</button>
+    </form>
+    <br>
+    {% if chart_url %}
+        <h2>Generated Chart</h2>
+        <img src="data:image/png;base64,{{ chart_url }}" alt="Chart">
+    {% endif %}
+</body>
+</html>
